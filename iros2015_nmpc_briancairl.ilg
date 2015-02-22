@@ -1,0 +1,95 @@
+This is makeindex, version 2.15 [TeX Live 2013] (kpathsea + Thai support).
+Scanning input file iros2015_nmpc_briancairl.tex...
+!! Input index error (file = iros2015_nmpc_briancairl.tex, line = 1):
+   -- Missing arguments -- need two (premature LFD).
+!! Input index error (file = iros2015_nmpc_briancairl.tex, line = 2):
+   -- Missing arguments -- need two (premature LFD).
+!! Input index error (file = iros2015_nmpc_briancairl.tex, line = 3):
+   -- Missing arguments -- need two (premature LFD).
+!! Input index error (file = iros2015_nmpc_briancairl.tex, line = 5):
+   -- Unknown index keyword \documentclass[letterpaper,10pt,conference].
+!! Input index error (file = iros2015_nmpc_briancairl.tex, line = 7):
+   -- Unknown index keyword %\documentclass[a4paper,10pt,conference].
+!! Input index error (file = iros2015_nmpc_briancairl.tex, line = 9):
+   -- Missing arguments -- need two (premature LFD).
+!! Input index error (file = iros2015_nmpc_briancairl.tex, line = 10):
+   -- Missing arguments -- need two (premature LFD).
+!! Input index error (file = iros2015_nmpc_briancairl.tex, line = 12):
+   -- Missing arguments -- need two (premature LFD).
+!! Input index error (file = iros2015_nmpc_briancairl.tex, line = 14):
+   -- Missing arguments -- need two (premature LFD).
+!! Input index error (file = iros2015_nmpc_briancairl.tex, line = 15):
+   -- Missing arguments -- need two (premature LFD).
+!! Input index error (file = iros2015_nmpc_briancairl.tex, line = 20):
+   -- Unknown index keyword \input.
+!! Input index error (file = iros2015_nmpc_briancairl.tex, line = 22):
+   -- Unknown index keyword \title.
+!! Input index error (file = iros2015_nmpc_briancairl.tex, line = 23):
+   -- Missing arguments -- need two (premature LFD).
+!! Input index error (file = iros2015_nmpc_briancairl.tex, line = 24):
+   -- Missing arguments -- need two (premature LFD).
+!! Input index error (file = iros2015_nmpc_briancairl.tex, line = 25):
+   -- Missing arguments -- need two (premature LFD).
+!! Input index error (file = iros2015_nmpc_briancairl.tex, line = 28):
+   -- Unknown index keyword \author.
+!! Input index error (file = iros2015_nmpc_briancairl.tex, line = 31):
+   -- Unknown index keyword \begin.
+!! Input index error (file = iros2015_nmpc_briancairl.tex, line = 35):
+   -- Missing arguments -- need two (premature LFD).
+!! Input index error (file = iros2015_nmpc_briancairl.tex, line = 36):
+   -- Unknown index keyword \thispagestyle.
+!! Input index error (file = iros2015_nmpc_briancairl.tex, line = 37):
+   -- Unknown index keyword \pagestyle.
+!! Input index error (file = iros2015_nmpc_briancairl.tex, line = 40):
+   -- Missing arguments -- need two (premature LFD).
+!! Input index error (file = iros2015_nmpc_briancairl.tex, line = 41):
+   -- Unknown index keyword \begin.
+!! Input index error (file = iros2015_nmpc_briancairl.tex, line = 43):
+   -- Unknown index keyword \input.
+!! Input index error (file = iros2015_nmpc_briancairl.tex, line = 45):
+   -- Unknown index keyword \end.
+!! Input index error (file = iros2015_nmpc_briancairl.tex, line = 48):
+   -- Missing arguments -- need two (premature LFD).
+!! Input index error (file = iros2015_nmpc_briancairl.tex, line = 49):
+   -- Unknown index keyword \section.
+!! Input index error (file = iros2015_nmpc_briancairl.tex, line = 50):
+   -- Unknown index keyword \input.
+!! Input index error (file = iros2015_nmpc_briancairl.tex, line = 53):
+   -- Missing arguments -- need two (premature LFD).
+!! Input index error (file = iros2015_nmpc_briancairl.tex, line = 54):
+   -- Unknown index keyword \section.
+!! Input index error (file = iros2015_nmpc_briancairl.tex, line = 55):
+   -- Unknown index keyword \input.
+!! Input index error (file = iros2015_nmpc_briancairl.tex, line = 58):
+   -- Missing arguments -- need two (premature LFD).
+!! Input index error (file = iros2015_nmpc_briancairl.tex, line = 59):
+   -- Unknown index keyword \section.
+!! Input index error (file = iros2015_nmpc_briancairl.tex, line = 60):
+   -- Unknown index keyword \input.
+!! Input index error (file = iros2015_nmpc_briancairl.tex, line = 64):
+   -- Missing arguments -- need two (premature LFD).
+!! Input index error (file = iros2015_nmpc_briancairl.tex, line = 65):
+   -- Unknown index keyword \section.
+!! Input index error (file = iros2015_nmpc_briancairl.tex, line = 66):
+   -- Unknown index keyword \input.
+!! Input index error (file = iros2015_nmpc_briancairl.tex, line = 70):
+   -- Missing arguments -- need two (premature LFD).
+!! Input index error (file = iros2015_nmpc_briancairl.tex, line = 71):
+   -- Unknown index keyword \section.
+!! Input index error (file = iros2015_nmpc_briancairl.tex, line = 72):
+   -- Unknown index keyword \input.
+!! Input index error (file = iros2015_nmpc_briancairl.tex, line = 76):
+   -- Unknown index keyword %\addtolength.
+!! Input index error (file = iros2015_nmpc_briancairl.tex, line = 78):
+   -- Missing arguments -- need two (premature LFD).
+!! Input index error (file = iros2015_nmpc_briancairl.tex, line = 82):
+   -- Missing arguments -- need two (premature LFD).
+!! Input index error (file = iros2015_nmpc_briancairl.tex, line = 84):
+   -- Unknown index keyword \bibliographystyle.
+!! Input index error (file = iros2015_nmpc_briancairl.tex, line = 85):
+   -- Unknown index keyword \bibliography.
+!! Input index error (file = iros2015_nmpc_briancairl.tex, line = 87):
+   -- Unknown index keyword \end.
+done (0 entries accepted, 45 rejected).
+Nothing written in iros2015_nmpc_briancairl.ind.
+Transcript written in iros2015_nmpc_briancairl.ilg.

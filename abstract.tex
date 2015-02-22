@@ -1,0 +1,18 @@
+%% Abstract
+
+This paper addresses a method of adaptive body orientation control for quadruped robots mobilized
+using open-loop gait control methods, such as Central Pattern Generators (CPG). The controller at
+hand is based on a feed-foward, inverse dynamics routine. Controller adaption is achieved using a 
+Nonlinear Autoregressive eXogenous (NARX)-model Neural Network -- a recurrent neural network
+architecture typically utilized for modeling nonlinear difference systems. Here, the NARX Network is
+utilized to make predictions about the system dynamics, which are assumed to be periodic during
+the execution of a cyclic gait. Furthermore, the controller serves as an on-line method for
+learning and canceling disturbances imparted upon angular trunk states. This control method
+is particularly applicable to legged systems which articulate trunk-mounted vision sensors, such
+as cameras and laser range-finders, by reconfiguring thee kinematic state of the trunk
+while executing a gait sequence. By canceling trunk distrubances, the fidelity of vision
+sensors meausurements can be enhanced by removing noise before it propogates to the aforementioned
+sensor units.
+
+%These state predictions are then combined with known feedback signals to approximate the robot's
+%dynamics during gaiting. signals are combined with reference trajectories for each foot through an inverse kinematic routine, which is then used to update joint position commands supplied to each independent joint controller.

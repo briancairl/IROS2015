@@ -1,0 +1,85 @@
+%%% System Dynamics
+
+We begin by considering a general, free-floating, four legged robotic system with $m$ degrees of 
+freedom per leg. This system is fully described by the state vector $\eta \RealVec{(6+4m)}$ and 
+evolves as per the following dynamics:
+	\begin{equation}
+		M(\eta)\ddot{\eta} + C(\eta,\dot{\eta})\dot{\eta} + G(\eta) + \Delta{H} = \tau + J^T(\eta) f_{ext}
+		\label{eq::normal_form_dynamics}
+	\end{equation}
+where $M(\eta)$, $C(\eta,\dot{\eta}$), $G(\eta)$ and $J(\eta)$ represent the system mass matrix, 
+Coriolis matrix, gravity matrix and Jacobian, respectively \cite{Wieber2006}. $\Delta{H}$ 
+has been included as a lump term for any dynamical uncertainties, such as friction or 
+unmodeled coupling effects. Additionally, $f_{ext} \RealVec{6}$ represents the total external 
+force-wrench applied to the system. 
+
+The state vector, $\eta$, can be divided into the following sub components: 
+$\eta = [ p_{b}^{T}, \theta_{b}^{T}, q^{T} ]^{T}$. $p_{b} \RealVec{3}$ and 
+$\theta_{b} \RealVec{3}$ which represent the position and orientation, respectively, of the 
+quadruped's trunk, in an arbitrarily placed world coordinate frame \cite{Wieber2015}.
+$q \RealVec{4 m}$ is a vector of joint  variables, $m$ of which are contributed by each leg.
+
+$\tau \RealVec{(6+4m)}$ represents a vector if generalized torque inputs and takes the form 
+$\tau = [ 0_{1x6}, \tau_{q} ]^{T}$, where $\tau_{q}$ represents the torque inputs to the joints. 
+It is important to note that the states we are most interested in controlling, $p_{b}$ and 
+$\theta_{b}$, are not directly actuated, and must be controlled through a composite of leg motions.
+
+
+\subsection{Dynamics in State-Space Form and an Approximate Discrete-Time Realization}
+
+
+The dynamics in (\ref{eq::normal_form_dynamics}) can be realized in compact, state-space form by:
+	\begin{equation}
+		\begin{split}
+		\dot{z}_{1} 				&= z_{2} \\
+		\dot{z}_{2} 				&= M(z_{1})^{-1}(\tau + \Phi(z_{1},z_{2},f_{ext})) \\
+		\Phi(z_{1},z_{2},f_{ext}) 	&= J^T(z_{1}) f_{ext} - C(z_{1},z_{2}) - G(z_{1}) - \Delta{H}
+		\end{split}
+		\label{eq::state_space_dynamics}
+	\end{equation}
+where $z_{1}=\eta$ and $z_{2}=\dot{\eta}$. The notation $\Phi(z_{1},z_{2},f_{ext})$ is invented
+for convenience when dealing with $M(z_{1})$, $C(z_{1},z_{2})$, $G(z_{1})$, $J(z_{1})$ and $\Delta H$
+as a composite dynamical term. This term will be referred to, simply, as $\Phi$ in the sections that follow.
+
+Because the routine present in this paper is realized as a digital controller which, it is convenient to 
+deal with the system dynamics, (\ref{eq::state_space_dynamics}), as a discrete-time approximation of 
+the following form:
+	\begin{equation}
+		\begin{split}
+		{z}_{1,k+1} &= {z}_{1,k} + ( {e}_{1,k}^{\Delta_{s}} + {z}_{2,k} )\Delta_{s} \\
+		{z}_{2,k+1} &= {z}_{2,k} + M^{-1}_{1,k}( {e}_{2,k}^{\Delta_{s}} + \tau_{k} - \Phi_{k}) \Delta_{s} \\
+		t 			&= t + \Delta_{s} k 
+		\end{split}
+		\label{eq::sampled_dynamics}
+	\end{equation}
+where $M_{1,k} = M(z_{1,k})$ and $\Delta_{s} \equiv (f_{s})^{-1}$, with $f_{s}$ defining a uniform 
+state-sampling frequency in Hz. ${e}_{1,k}^{\Delta_{s}}$ and ${e}_{2,k}^{\Delta_{s}}$ are used to explicitly 
+account for system discretization errors, which vary with with respect to the step-size, $\Delta_{s}$. These
+discretization errors will be accounted using the learning mechanism, to be described later.
+
+
+\subsection{Joint-Controller Dynamics}
+
+
+An important part of the control algorithm at hand is its extensibility to systems that have been implemented 
+with decentralized joint controllers. In the case where a decentralized joint control architecture is used, 
+control over the torques applied at each is typically not explicit. To deal with this an inverse joint control 
+model (or some adequate approximation) is needed for proper interfacing with the model-based controller.
+
+In many cases, the controller dynamics of a revolute joint-position controllers can be described as a simple 
+proportional (P), or P.D. control schemes. The BlueFoot platform, for example, utilizes 16 smart-servo controllers
+that can be described via a P-control scheme. Using the introduced notations, BlueFoot's joint control scheme takes 
+the follow aggregate form:
+	\begin{equation}
+		\tau = K_{s} (z_{1}^{r}-z_{1}) = 
+		\left[\begin{array}{cc}
+		0_{6\times6}	& 	0	\\
+		0				&	k_{s} I_{(4m)\times(4m)}	\\
+		\end{array}\right] (z_{1}^{r}-z_{1})
+		\label{eq::servo_control_dynamics}
+	\end{equation}
+where $k_{s}>0$ is a constant, scalar gain. For the remainder of this paper, we will assume a decentralized 
+joint-position control regime of this form. The control method at hand, however, is certainly not limited to 
+platforms with this specific joint control architecture. With slight modifications, it is conceivable that this control
+technique could be extended to any other decentralized joint control architecture with invertible or least-squares
+invertible controller dynamics.

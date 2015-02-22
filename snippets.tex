@@ -1,0 +1,29 @@
+%% Snippets
+
+\subsection{Joint Controller Dynamics}
+Since the problem at hand is focused on the control of a legged system implemented with 
+position-controlled servos, we define each \ith torque input, $\tau_{i}$ by
+\begin{equation}
+\tau_{i} = K_{p} ( \theta_{i,r} - \theta_{i} ) 
+\label{eq::servo_control_dynamics}
+%\caption{Normal form dynamics of free-floating robotic system}
+\end{equation}
+%%
+%%
+where $K_{p} \RealMat{4}{4}$ is a diagonal, positive definite proportional-gain matrix,
+and $\theta_{i,r} \RealVec{4}$ is a vector of joint reference commands corresponding to the joints of \ith leg.  
+
+\begin{figure}[h!]
+		\centering
+		\subfigure{\centering\fbox{\includegraphics[scale=0.375]{paper2_V_60mms_nN_50_nL_2_pos.png}}\caption{}}
+		\subfigure{\centering\fbox{\includegraphics[scale=0.375]{paper2_V_60mms_nN_50_nL_2_pos.png}}\caption{}}
+		\caption{Trot Gait at 60$\frac{mm}{s}$; a) Trunk Orientation; b) NARX-Network Error and Learning Rate}
+		\label{fig::results_1_1}
+	\end{figure}
+	\begin{figure}[h!]
+		\centering
+		\subfigure{\centering\fbox{\includegraphics[scale=0.375]{paper2_V_60mms_nN_50_nL_2_pos.png}}\caption{}}
+		\subfigure{\centering\fbox{\includegraphics[scale=0.375]{paper2_V_60mms_nN_50_nL_2_pos.png}}\caption{}}
+		\caption{Trot Gait at 80$\frac{mm}{s}$; a) Trunk Orientation; b) NARX-Network Error and Learning Rate}
+		\label{fig::results_2_1}
+	\end{figure}

@@ -1,0 +1,48 @@
+%%% Introduction %%%
+
+Legged robotic systems have long employed motion controllers based on limit cycle oscillators and, more recently, 
+Central Pattern Generators (CPGs)  for the purpose of generating bio-mimetic gaits 
+\cite{Matsuoka1985,Collins1993,Endo2004,Righetti2006,Ijspeert2008,Matos2010,Ajallooeian2013,Park2014,Fukuoka2015}. 
+Since these motion control methods are, in essence, open-loop motion planners they do not guarantee stability and cannot 
+be applied directly without further consideration of the legged system's dynamics. Moreover, proper implementation of 
+the aforementioned methods of locomotion requires the use of auxiliary control mechanisms which can adapt the system 
+to disturbances and changes in environmental conditions.
+
+Namely, developments in CPG-based gait controller have led to the incorporation ``reflexive" feedback
+mechanisms aimed at correcting foot-placement and trunk posture during gaiting \cite{Fukuoka2003,Endo2004}. These methods 
+are meant to further extend to similarity of legged systems to their biological counterparts, and hinge on fixed-point control methods
+covered in detail in \cite{Wieber2015}. However, few gait controllers of this nature, however, utilize an on-line learning mechanism 
+to handle the task of achieving system stability, namely angular trunk stability.
+
+Disturbance rejection from the angular body states of is of practical importance for larger legged systems with many sensors 
+rigidly fixed to their trunk sections. By extension, the trunk of a legged system could be used to pitch and roll sensor units,
+like camera's and laser distance sensors, as will be done with our \emph{BlueFoot} quadruped system, shown in \MissingFig. Performing
+such a task during gaiting certainly demands proper control stability control of angular trunk states. Without compensation 
+vision sensor measurements will likely be disturbed by vibrations caused by instantaneous changes in force distribution, namely, 
+when feet make and break contact with the ground. Additionally, certain dynamic gaits during which two or fewer legs are in 
+contact with the ground at any given time cause the system to enter under-actuated state where the trunk is free to rock 
+about the planted feet, as shown in Figure \ref{fig::tipping_robot}.  These gaits however, are advantageous because they 
+typically allow quadruped systems to attain higher land speeds than with static creep-gaits \MissingRef. 
+	\begin{figure}[t!]
+		\centering
+		\SetImage{\ImageWidthRatio}{tipping_robot.png}
+		\caption{Quadruped Tipping About Planted Feet During A Trot Gait}
+		\label{fig::tipping_robot}
+	\end{figure}
+To address the problem of trunk-state disturbance rejection during CPG-generated, non-static gaits, this paper will
+present a trunk-stabilization routine that utilizes a Nonlinear Autoregressive eXogenous (NARX)-model Nueral Network 
+to learn and predict the quadruped system  during gaiting and predict periodic disturbances.
+
+The use of a NARX-model Neural Network is particularly important feature of the control method being presented, 
+as it has been shown that network models have an affinity for approximating nonlinear difference systems and make 
+chaotic time-series predictions \cite{Tsungnan1996,ChenBillings1990,Hihi1996,Billings2013}. This provides
+a natural fit to a problem such as this, where the dynamics at are both periodic and of a high enough complexity
+where an approximation method is certainly warranted.
+
+This paper will first examine the general-form dynamics for a legged system, and a first-order discrete-time counterpart. 
+Next, the nuero-compensator mechanism will be outlined, and the NARX-Network training regimen will be described with respect
+to the system dynamics. This will also include a section about how the compensator output is applied to correct joint reference 
+signals for when the compensator is applied to a legged system implemented with a decentralized joint control architecture. 
+Lastly, results showing the effectiveness of the compensator, as it is applied to a quadruped platform (the \emph{BlueFoot} 
+Quadruped) executing a CPG-drive trot gait, will be presented. Results will highlight the robustness of this approach,
+even when applied to gaiting over a surface with unperceived 

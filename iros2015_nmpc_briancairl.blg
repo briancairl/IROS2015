@@ -1,0 +1,56 @@
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: iros2015_nmpc_briancairl.aux
+The style file: unsrt.bst
+Database file #1: refs.bib
+Warning--empty journal in Righetti2006
+Warning--empty journal in Ajallooeian2013
+Name 1 in "Park, Hae-Won, Meng Yee (Michael) Chuah, and Sangbae Kim" has a comma at the end for entry Park2014
+while executing---line 944 of file unsrt.bst
+Warning--empty journal in Park2014
+Too many commas in name 1 of "Wieber, P.-B., Tedrake R., Kuindersma S." for entry Wieber2015
+while executing---line 944 of file unsrt.bst
+Warning--empty booktitle in Rumelhart1988
+Warning--empty booktitle in Rumelhart1995
+You've used 21 entries,
+            1791 wiz_defined-function locations,
+            607 strings with 7787 characters,
+and the built_in function-call counts, 5952 in all, are:
+= -- 553
+> -- 194
+< -- 16
++ -- 73
+- -- 52
+* -- 379
+:= -- 839
+add.period$ -- 66
+call.type$ -- 21
+change.case$ -- 19
+chr.to.int$ -- 0
+cite$ -- 26
+duplicate$ -- 302
+empty$ -- 598
+format.name$ -- 52
+if$ -- 1415
+int.to.chr$ -- 0
+int.to.str$ -- 21
+missing$ -- 20
+newline$ -- 106
+num.names$ -- 25
+pop$ -- 83
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 192
+stack$ -- 0
+substring$ -- 456
+swap$ -- 118
+text.length$ -- 16
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 5
+while$ -- 50
+width$ -- 23
+write$ -- 231
+(There were 2 error messages)

@@ -1,0 +1,68 @@
+%%% Introduction %%%
+
+Decentralized joint control schemes provide convenient frameworks for the design and control 
+of legged, mobile robotic platforms. This is especially so when model-based control schemes are rendered
+intractable due to difficulties in modeling the effects discontinuities and variable kinematic constraints
+without the aid of numerical solvers or carefully-made approximations.
+
+Provided that each joint actuator has adequate control authority, a decentralized control 
+architecture allows for greater focus to be placed on the control of high-level, kinematic planning tasks. 
+Moreover, an accurate model of system interactions is not always needed because joint tracking errors 
+can largely be ignored. 
+	% TO DO :	[ source for this statement]
+Control tasks which naturally fall into this realm include gaiting and manipulation control performed in 
+the robot task-space.
+
+Nonetheless, fully decentralized architectures present obvious difficulties when it comes to controlling
+non-actuated robot states, which depend on a combination of cooperative joint control and some knowledge 
+of the surrounding environment to achieve a desired behavior. An prime example of this would be the trunk 
+control of a legged robot, which results from composite leg configurations their relation to a standing surface.
+	% TO DO :	[ picture of quadruped on surface ]
+Disturbance rejection and control, in this case, tends to rely on explicit knowledge of the robot's environmental 
+and careful trajectory planning for all task-space variables. Additionally, the fidelity  of this task-space control
+regime falls prey to under-actuated robot configurations or \emph{weak} joint controller which cannot ensure
+adequate joint trajectory tracking.
+	% TO DO :	[ picture of quadruped on surface ]
+
+In light of the aforementioned motivating concerns, this paper will focus on the trunk control of quadruped robots 
+implemented with decentralized joint controllers, and gaited using open-loop trajectory control routines in the robot
+task-space. Typically, open-loop, gaited locomotion routines, such as [...], serve as low-complexity 
+	% TO DO :	[ such as... ]
+methods mobilizing a quadruped platform. A major drawback of some open-loop gaiting methods it their tendency to disregard
+control over the orientation state of the robot's trunk. disregard of dynamical effects, or the necessity for careful tuning to produce
+consistent motions, even when the terrain over which the robot is traversing is highly regular. With enough attention 
+configuration and careful tuning, these disturbance are not generally problematic for generating effective platform locomotion. 
+However, unexpected changes in the state are sure to occur given of the systems body orientation come with their own an array 
+of associated practical concerns.
+
+For example, the trunk of the quadruped robot may contain an array of vision sensors (camera, laser range-finder, etc.)
+which are rigidly attached to the robot chassis. Furthermore, the system may rely on actuation of the trunk to manipulate
+the orientation of these sensors in a controlled fashion. If left uncorrected by, measurements from these 
+sensor will surely be effected by disturbances in the trunk's orientation states robot's trunk during gaiting, which propagate
+due to their rigid interface with the robot.
+
+These disturbance at hand manifest as a result of natural excitations that occur as a result of instantaneous changes 
+in the distribution of applied external forces as the robot's feet make and break contact with the ground.
+Furthermore, changes in contact configurations during gaiting extend to the authority of a legged system has over 
+its main body, and could cause for changes between fully-actuated and under-actuated modes, depending on the 
+number of foot contacts currently being made with a supporting surface. Given the variability of constraints during 
+an arbitrary gait sequences, the dynamics which govern these effects becomes hard to model in closed form.
+
+Using a centralized control architecture in which joints are controlled on the level of actuator torques, 
+the aforementioned problems could be easily circumvented by scheduling joint compliances during 
+known changes in robot configurations. This is less straightforward when the system is implemented
+with decentralized servo controllers, which are typically commanded via goal positions.
+
+Given the periodicity of gaited locomotion it is more tractable to estimate these dynamics with an on-line learning mechanism.
+
+Neural networks have long been applied to the control of robotic systems due to their usefulness
+in the design both on-line and off-line of compensatory mechanisms. Typically, these neuro-compensator
+are utilized to model unknown dynamical effects, such as sudden parametric changes in physical system
+configuration or loading. Namely, neural networks solutions provide convenient mechanisms for modeling and 
+identifying complex system dynamics or structured disturbance effects that present difficulties when a 
+closed form description is necessary. 
+
+
+
+
+

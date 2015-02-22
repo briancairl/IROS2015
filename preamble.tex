@@ -1,0 +1,111 @@
+%%% "cx" Includes
+%\usepackage[top=0.5in, bottom=0.5in, left=0.5in, right=0.5in]{geometry}
+\usepackage{makecell}
+\usepackage[pdftex]{graphicx}
+\usepackage{mathtools}
+\usepackage{multicol}
+\usepackage{cite}
+%\usepackage[mathscr]{euscript}
+\usepackage{color}
+\usepackage{listings}
+\usepackage{dsfont}
+\usepackage{subcaption}
+\usepackage{color}
+%\usepackage{algorithmicx}
+%\usepackage{algpseudocode}
+\usepackage{framed}
+\usepackage{tabularx}
+%\usepackage[sc]{mathpazo} 
+%\usepackage[T1]{fontenc}
+
+% The following packages can be found on http:\\www.ctan.org
+\usepackage{graphics} % for pdf, bitmapped graphics files
+\usepackage{epsfig} % for postscript graphics files
+\usepackage{mathptmx} % assumes new font selection scheme installed
+\usepackage{times} % assumes new font selection scheme installed
+\usepackage{amsmath} % assumes amsmath package installed
+\usepackage{amssymb}  % assumes amsmath package installed
+\usepackage[mathscr]{euscript}
+
+\usepackage[usenames,dvipsnames]{pstricks}
+\usepackage{epsfig}
+\usepackage{pst-grad} % For gradients
+\usepackage{pst-plot} % For axes
+\usepackage{xr}
+\usepackage{subfig}
+
+%%%% "cx" Delimiters
+\DeclarePairedDelimiter{\cxWrap}{(}{)}
+\DeclarePairedDelimiter{\cxSqrBrack}{[}{]}
+\DeclarePairedDelimiter{\cxDotBrack}{<}{>}
+\DeclarePairedDelimiter{\cxSetWrap}{\{}{\}}
+\DeclarePairedDelimiter{\cxAbs}{\lvert}{\rvert}
+\DeclarePairedDelimiter{\cxNorm}{\lVert}{\rVert}
+
+
+%%%%Tabularx
+\newcolumntype{L}[1]{>{\hsize=#1\hsize\raggedright\arraybackslash}X}
+\newcolumntype{R}[1]{>{\hsize=#1\hsize\raggedleft\arraybackslash}X}
+\newcolumntype{C}[1]{>{\hsize=#1\hsize\centering\arraybackslash}X}
+
+
+%%% "cx" commands
+%\newcommand{\cxSmallThenNormal}[1]{\small #1 \normalsize}
+
+\newcommand{\ith}{\hspace{0.1mm}$i^{th}$}
+\newcommand{\jth}{\hspace{0.1mm}$i^{th}$}
+\newcommand{\kth}{\hspace{0.1mm}$k^{th}$}
+\newcommand{\Ith}{\hspace{0.1mm}$i^{th}$\hspace{0.5mm}}
+\newcommand{\Jth}{\hspace{0.1mm}$i^{th}$\hspace{0.5mm}}
+\newcommand{\Kth}{\hspace{0.1mm}$k^{th}$\hspace{0.5mm}}
+\newcommand{\Forall}{\hspace{1mm}\forall\hspace{1mm}}
+\newcommand{\RealVec}[1]{\in \mathbb{R}^{#1\times1}}
+\newcommand{\RealMat}[2]{\in \mathbb{R}^{#1\times#2}}
+\newcommand{\SmallThenNormal}[1]{#1}
+\newcommand{\Real}{\mathds{R}}
+\newcommand{\InRe}[1]{\in\Real^{#1}}
+\newcommand{\EqRef}[1]{Equation \ref{eq:#1}}
+\newcommand{\EqLabel}[1]{\label{eq:#1}}
+\newcommand{\FigRef}[1]{Figure \ref{fig:#1}}
+\newcommand{\FigLabel}[1]{\label{fig:#1}}
+\newcommand{\TableRef}[1]{Table \ref{tab:#1}}
+\newcommand{\TableLabel}[1]{\label{tab:#1}}
+\newcommand{\Sep}{\hspace{5mm}}
+\newcommand{\SSep}{\hspace{2mm}}
+\newcommand{\IE}{\emph{i.e.},\hspace{1mm}}
+\newcommand{\DotProd}[2]{\DotBrack*{#1,#2}}
+\newcommand{\DiagMat}[1]{\text{diag}\Wrap*{#1}}
+\newcommand{\Maps}[3]{ #1 \hspace{2mm} \Real^{#2} \rightarrow \Real^{#3}}
+\newcommand{\Normalize}[1]{\frac{#1}{\Norm{#1}}}
+\newcommand{\Sig}[1]{\text{sig}\Wrap*{#1}}
+\newcommand{\Unit}[1]{\mathcal{U}\Wrap*{#1}}
+\newcommand{\Skew}[1]{\mathcal{S}\Wrap*{#1}}
+\newcommand{\ForI}{ \forall i \in \SetWrap*{1,2,3,4} }
+\newcommand{\Half}{0.5}
+\newcommand{\Where} {\noindent where}
+\newcommand{\SectionLabel}[1]{\label{sec:#1}}
+\newcommand{\SectionRef}[1]{Section \ref{sec:#1}}
+\newcommand{\SectionRefH}[1]{Section #1}
+\newcommand{\SectionsRefH}[1]{Sections #1}
+\newcommand{\SectionHead}[1]{\normalsize}
+\newcommand{\SectionTail}[1]{\SectionLabel{#1}\normalsize}
+\newcommand{\Project}[2]{{P}_{#2}\Wrap*{#1}}
+\newcommand{\Markup}[1]{ {\noindent\color{red}#1} }
+\newcommand{\NeedsRef}[1]{\Markup{Needs Ref : \emph{#1}}}
+\newcommand{\MissingRef}{\Markup{[*]}}
+\newcommand{\MissingFig}{\Markup{[NEED FIG]}}
+\newcommand{\If}{ \text{if}\hspace{1mm}}
+\newcommand{\Sum}[3]{\sum_{#1=#2}^{#3}}
+\newcommand{\Para}[1]{\indent{#1}\\}
+\newcommand{\R}[2]{R_{#1}\Wrap*{#2}}
+\newcommand{\SQuotes}[1]{`#1'}
+\newcommand{\DQuotes}[1]{``#1''}
+\newcommand{\InlineSeg}{\SSep , \SSep}
+
+%% Image Settings
+\newcommand{\ImageWidthRatio}{0.475}
+\newcommand{\ImageWidthRatioSub}{0.950}
+\newcommand{\ImagePostNoGap}{\vspace{-2mm}}
+\newcommand{\SetImage}[2]{\fbox{\includegraphics[width=#1\textwidth]{#2}}}
+
+\DeclareMathSizes{4}{4}{2}{2}
